@@ -25,5 +25,6 @@ type (
 		Role              *Role              `gorm:"foreignKey:RoleID" json:"role,omitempty"`
 		NotificationToken string             `gorm:"column:notification_token" json:"notification_token"`
 		DeviceToken       string             `gorm:"column:device_token"  json:"device_token"`
+		StudentProfile    *StudentProfile
 	}
 )

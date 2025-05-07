@@ -47,6 +47,8 @@ func LoadDatabase() {
 		&dts.Feedback{},
 		&dts.QuizResponse{},
 		&dts.Team{},
+		&dts.StudentProfile{},
+		&dts.Class{},
 
 	// &databases.Passport{},
 	// &databases.User{},

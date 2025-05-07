@@ -29,4 +29,25 @@ type (
 		Rating     int    `gorm:"column:rating" json:"rating"`     // 1–5 scale
 		Comments   string `gorm:"column:comments" json:"comments"` // open feedback
 	}
+
+	Class struct {
+		Base
+		Name        string `json:"name"`
+		Code        string `json:"code"`
+		Description string `json:"description"`
+		Semester    string `json:"semester"`
+		TeacherID   uint   `json:"teacher_id"`
+		Teacher     User   `json:"-" gorm:"foreignKey:TeacherID"`
+		Students    []User `json:"students"`
+	}
+	StudentProfile struct {
+		Base
+		UserID  uint    `json:"user_id"`
+		GPA     float64 `json:"gpa"`
+		ClassID *uint   `json:"class_id"`
+	}
+	// TeacherProfile struct {
+	// 	Base
+
+	// }
 )
